@@ -19,6 +19,8 @@ namespace SchoolPractice
             Console.WriteLine(susan);
             susan.AddGrade(5, 4.0);
             Console.WriteLine(susan);
+            susan.AddGrade(7, 4.0);
+            Console.WriteLine(susan);
 
 
         }
