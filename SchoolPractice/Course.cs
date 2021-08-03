@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Text;
 
 namespace SchoolPractice
 {
@@ -9,12 +10,32 @@ namespace SchoolPractice
         public Teacher Instructor { get; set; }
         public List<Student> enrolledStudents { get; set; }
 
+        public override string ToString()
+        {
+            return "Course: {Topic}, Teacher: {Instructor}";
+        }
 
-        // TODO: Add your custom 'ToString' method here. Make sure it returns a well-formatted string rather than
-        //  just the class fields.
+        public override bool Equals(object toBeCompared)
+        {
+            if (toBeCompared == this)
+            {
+                return true;
+            }
+
+            if (toBeCompared == null)
+            {
+                return false;
+            }
+
+            if (toBeCompared.GetType() != GetType())
+            {
+                return false;
+            }
+
+            Course theCourse = toBeCompared as Course;
+            return theCourse.Instructor == Instructor && theCourse.Topic == Topic;
+        }
 
 
-        // TODO: Add your custom 'Equals' method here. Consider which fields should match in order to call two
-        //  Course objects equal.
     }
 }
